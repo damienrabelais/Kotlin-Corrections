@@ -18,9 +18,9 @@ fun main() = runBlocking {
     // 2. Coroutine "Console de contrôle" : Le Consommateur
     val consoleJob = launch {
         // Le collect attend que l'état change.
-        etatBatterie.collect { niveau ->
-            println(">>> Console : État reçu -> $niveau%")
-            if (niveau < 20) {
+        etatBatterie.collect { niveauLu ->
+            println(">>> Console : État reçu -> $niveauLu%")
+            if (niveauLu < 20) {
                 println("!!! ALERTE CRITIQUE : Énergie faible sur Ares-1 !!!")
             }
         }

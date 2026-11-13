@@ -23,8 +23,8 @@ fun main() = runBlocking {
     // Ecoute le droneStateFlow, chaque modification de la propriété 'value'
     // lance automatiquement la lambda avec en entrée la nouvelle 'value'
     launch {
-        droneStateFlow.collect { etat ->
-            println(">>> Moniteur : Altitude=${etat.altitude}m | Statut=${etat.statut}")
+        droneStateFlow.collect { etatLu ->
+            println(">>> Moniteur : Altitude=${etatLu.altitude}m | Statut=${etatLu.statut}")
         }
     }
     delay(3000)
